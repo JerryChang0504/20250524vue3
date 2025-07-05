@@ -45,6 +45,15 @@
         </select>
 
         <p>你選擇的國家代碼：{{ country }}</p>
+
+
+        <select v-model="multiCountry" multiple>
+            <option value="tw">台灣</option>
+            <option value="jp">日本</option>
+            <option value="us">美國</option>
+        </select>
+        <p>你選擇的國家代碼：{{ multiCountry }}</p>
+
     </div>
 </template>
 
@@ -79,6 +88,8 @@ const countryOptions = ref([
     { numeric: 250, code: 'fr', name: '法國' },
     { numeric: 276, code: 'de', name: '德國' },
 ])
+
+const multiCountry = ref('')
 </script>
 
 <style scoped>
