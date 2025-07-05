@@ -7,23 +7,40 @@
 
             <button type="submit">新增商品</button>
         </form>
-        <pre> {{ products }} </pre>
+        <!-- <pre> {{ products }} </pre> -->
+
+        <ProductChildItem v-for="product in products" :key="product.id" :product="product" />
     </div>
 </template>
 
 <script setup>
 
 import { ref } from 'vue'
+import ProductChildItem from './ProductChildItem.vue'
 // 商品編號
 let nextId = 1
 const form = ref({
-    id: null,
+    id: 1,
     name: '',
-    price: 1
+    price: 1000
 })
 
 
-const products = ref([
+const products = ref([{
+    id: nextId++,
+    name: '滑鼠',
+    price: 500,
+},
+{
+    id: nextId++,
+    name: '鍵盤',
+    price: 800,
+},
+{
+    id: nextId++,
+    name: '顯示器',
+    price: 3000,
+},
 ])
 
 const handleSubmit = () => {
@@ -42,7 +59,7 @@ function resetForm() {
     form.value = {
         id: null,
         name: '',
-        price: '',
+        price: 1000,
     }
 }
 </script>
