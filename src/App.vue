@@ -22,6 +22,7 @@ import VonClick from './components/VonClick.vue'
 import VonPrevent from './components/VonPrevent.vue'
 import VonInput from './components/VonInput.vue'
 import VmodelSample from './components/VmodelSample.vue'
+import ProductManager from './components/ProductManager.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -37,7 +38,8 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <VmodelSample />
+    <ProductManager />
+    <!-- <VmodelSample /> -->
     <!-- <VonInput /> -->
     <!-- <VonPrevent /> -->
     <!-- <VonClick /> -->
