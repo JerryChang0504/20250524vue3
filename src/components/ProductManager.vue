@@ -6,6 +6,7 @@
             <input v-model.number="form.price" type="number" :placeholder="'價格'" />
 
             <button type="submit">{{ form.id ? '更新商品' : '新增商品' }}</button>
+            <button v-if="form.id" type="button" @click="resetForm">取消編輯</button>
         </form>
         <!-- <pre> {{ products }} </pre> -->
 
@@ -21,7 +22,7 @@ import ProductChildItem from './ProductChildItem.vue'
 // 商品編號
 let nextId = 1
 const form = ref({
-    id: 1,
+    id: null,
     name: '',
     price: 1000
 })
@@ -47,11 +48,19 @@ const products = ref([{
 const handleSubmit = () => {
     if (!form.value.name || !form.value.price) return
 
-    products.value.push({
-        id: nextId++,
-        name: form.value.name,
-        price: form.value.price
-    })
+    if (form.value.id) {
+        // 編輯
+        const target = products.value.find((product) => product.id === form.value.id)
+        target.name = form.value.name
+        target.price = form.value.price
+    } else {
+        // 新增
+        products.value.push({
+            id: nextId++,
+            name: form.value.name,
+            price: form.value.price
+        })
+    }
     resetForm()
 }
 
@@ -66,14 +75,18 @@ function resetForm() {
 
 const editProduct = (product) => {
     console.log("🚀 ~ editProduct ~ product:", product)
-    form.value = product
+
+    // form.value.id = product.id
+    // form.value.name = product.name
+    // form.value.price = product.price
+    form.value = { ...product }
 
 }
 
 const delProduct = (id) => {
     console.log("🚀 ~ delProduct ~ id:", id)
     products.value = products.value.filter((product) => product.id !== id)
-    // resetForm()
+    if (form.value.id === id) resetForm()
 }
 
 </script>
