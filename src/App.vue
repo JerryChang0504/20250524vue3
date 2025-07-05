@@ -10,6 +10,7 @@ import ComputedAndMethod from './components/ComputedAndMethod.vue'
 import ResigForm from './components/ResigForm.vue'
 import ShppingCar from './components/ShppingCar.vue'
 import TermsAgreement from './components/TermsAgreement.vue';
+import VbindStyle from './components/VbindStyle.vue';
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -25,7 +26,8 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <TermsAgreement />
+    <!-- <TermsAgreement /> -->
+    <VbindStyle />
     <!-- <ResigForm /> -->
     <!-- <ComputedAndMethod /> -->
     <!-- <ComputedDemo /> -->
