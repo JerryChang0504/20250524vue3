@@ -12,6 +12,7 @@ import ShppingCar from './components/ShppingCar.vue'
 import TermsAgreement from './components/TermsAgreement.vue';
 import VbindStyle from './components/VbindStyle.vue';
 import VbindClass from './components/VbindClass.vue';
+import VifDemo from './components/VifDemo.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -27,7 +28,8 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <VbindClass />
+    <VifDemo />
+    <!-- <VbindClass /> -->
     <!-- <TermsAgreement /> -->
     <!-- <VbindClass /> -->
     <!-- <VbindStyle /> -->
