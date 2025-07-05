@@ -13,6 +13,7 @@ import TermsAgreement from './components/TermsAgreement.vue';
 import VbindStyle from './components/VbindStyle.vue';
 import VbindClass from './components/VbindClass.vue';
 import VifDemo from './components/VifDemo.vue'
+import ConditionalRendering from './components/ConditionalRendering.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -28,7 +29,8 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <VifDemo />
+    <ConditionalRendering />
+    <!-- <VifDemo /> -->
     <!-- <VbindClass /> -->
     <!-- <TermsAgreement /> -->
     <!-- <VbindClass /> -->
