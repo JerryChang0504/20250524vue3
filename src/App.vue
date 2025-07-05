@@ -35,8 +35,8 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <!-- <VonPrevent /> -->
-    <VonClick />
+    <VonPrevent />
+    <!-- <VonClick /> -->
     <!-- <ArrayChangeDetection /> -->
     <!-- <ProductList /> -->
     <!-- <ItemObjectVfor /> -->
