@@ -2,16 +2,25 @@
     <div class="product-item">
         <span>{{ product.name }} - ${{ product.price }}</span>
         <div class="actions">
-
+            <button @click="editProduct">編輯</button>
+            <button @click="removeProduct">刪除</button>
         </div>
     </div>
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
     product: Object
 })
+const emit = defineEmits(['edit', 'delete'])
 
+const editProduct = () => {
+    emit('edit', props.product)
+}
+
+const removeProduct = () => {
+    emit('delete', props.product.id)
+}
 </script>
 
 <style scoped>

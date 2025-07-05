@@ -5,11 +5,12 @@
             <input v-model="form.name" :placeholder="'商品名稱'" />
             <input v-model.number="form.price" type="number" :placeholder="'價格'" />
 
-            <button type="submit">新增商品</button>
+            <button type="submit">{{ form.id ? '更新商品' : '新增商品' }}</button>
         </form>
         <!-- <pre> {{ products }} </pre> -->
 
-        <ProductChildItem v-for="product in products" :key="product.id" :product="product" />
+        <ProductChildItem v-for="product in products" :key="product.id" :product="product" @edit="editProduct"
+            @delete="delProduct" />
     </div>
 </template>
 
@@ -62,6 +63,19 @@ function resetForm() {
         price: 1000,
     }
 }
+
+const editProduct = (product) => {
+    console.log("🚀 ~ editProduct ~ product:", product)
+    form.value = product
+
+}
+
+const delProduct = (id) => {
+    console.log("🚀 ~ delProduct ~ id:", id)
+    products.value = products.value.filter((product) => product.id !== id)
+    // resetForm()
+}
+
 </script>
 
 <style scoped>
