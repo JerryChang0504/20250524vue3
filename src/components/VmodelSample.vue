@@ -19,20 +19,29 @@
     <hr>
     <div>
         <h3>選擇性別：</h3>
-        <label><input type="radio" value="男" v-model="gender" /> 男</label>
-        <label><input type="radio" value="女" v-model="gender" /> 女</label>
+        <!-- <label><input type="radio" value="男" v-model="gender" /> 男</label>
+        <label><input type="radio" value="女" v-model="gender" /> 女</label> -->
 
+        <label v-for="(gen, index) in genderList" :key="index">
+            <input type="radio" :value="gen.value" v-model="gender" />
+            {{ gen.label }}
+        </label>
         <p>你選擇的性別：{{ gender }}</p>
     </div>
 
     <hr>
     <div>
         <h3>選擇國家：</h3>
-        <select class="selectClass" v-model="country">
+        <!-- <select class="selectClass" v-model="country">
             <option disabled value="">請選擇</option>
             <option value="tw">台灣</option>
             <option value="jp">日本</option>
             <option value="us">美國</option>
+        </select> -->
+
+        <select class="selectClass" v-model="country">
+            <option disabled value="">請選擇</option>
+            <option v-for="cty in countryOptions" :key="cty.numeric" :value="cty.code">{{ cty.name }}</option>
         </select>
 
         <p>你選擇的國家代碼：{{ country }}</p>
