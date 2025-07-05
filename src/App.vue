@@ -21,6 +21,7 @@ import ProductList from './components/ProductList.vue'
 import VonClick from './components/VonClick.vue'
 import VonPrevent from './components/VonPrevent.vue'
 import VonInput from './components/VonInput.vue'
+import VmodelSample from './components/VmodelSample.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -36,7 +37,8 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <VonInput />
+    <VmodelSample />
+    <!-- <VonInput /> -->
     <!-- <VonPrevent /> -->
     <!-- <VonClick /> -->
     <!-- <ArrayChangeDetection /> -->
