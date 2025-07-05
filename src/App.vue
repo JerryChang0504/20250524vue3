@@ -18,6 +18,7 @@ import VifVshowDiff from './components/VifVshowDiff.vue'
 import ItemObjectVfor from './components/ItemObjectVfor.vue'
 import ArrayChangeDetection from './components/ArrayChangeDetection.vue'
 import ProductList from './components/ProductList.vue'
+import VonClick from './components/VonClick.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -33,7 +34,8 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <ArrayChangeDetection />
+    <VonClick />
+    <!-- <ArrayChangeDetection /> -->
     <!-- <ProductList /> -->
     <!-- <ItemObjectVfor /> -->
     <!-- <VifVshowDiff /> -->
