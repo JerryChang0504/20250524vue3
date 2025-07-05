@@ -2,6 +2,8 @@
     <div class="product-list">
         <h2>📦 商品清單</h2>
         <ProductItem v-for="product in products" :key="product.id" :name="product.name" :price="product.price" />
+
+        <ProductItem v-for="product in products" :key="product.id" :item="product" />
     </div>
 </template>
 

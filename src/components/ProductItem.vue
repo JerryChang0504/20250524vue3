@@ -1,13 +1,16 @@
 <template>
     <div class="product-item">
-        <p>{{ name }} - ${{ price }}</p>
+        <!-- <p>{{ name || item.name }} - ${{ price ||  }}</p> -->
+        <p v-if="name && price">{{ name }} - ${{ price }}</p>
+        <p v-else>{{ item.name }} - ${{ item.price }}</p>
     </div>
 </template>
 
 <script setup>
 defineProps({
     name: String,
-    price: Number
+    price: Number,
+    item: Object
 })
 </script>
 
