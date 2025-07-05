@@ -16,7 +16,7 @@ import VifDemo from './components/VifDemo.vue'
 import ConditionalRendering from './components/ConditionalRendering.vue'
 import VifVshowDiff from './components/VifVshowDiff.vue'
 import ItemObjectVfor from './components/ItemObjectVfor.vue'
-
+import ArrayChangeDetection from './components/ArrayChangeDetection.vue'
 import ProductList from './components/ProductList.vue'
 const userDate = { name: 'Mary', age: 18 }
 
@@ -33,7 +33,8 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <ProductList />
+    <ArrayChangeDetection />
+    <!-- <ProductList /> -->
     <!-- <ItemObjectVfor /> -->
     <!-- <VifVshowDiff /> -->
     <!-- <ConditionalRendering /> -->
