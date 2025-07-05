@@ -51,8 +51,16 @@ const handleSubmit = () => {
     if (form.value.id) {
         // 編輯
         const target = products.value.find((product) => product.id === form.value.id)
-        target.name = form.value.name
-        target.price = form.value.price
+        // target.name = form.value.name
+        // target.price = form.value.price
+
+        // 解構
+        const { name, price } = form.value
+        target.name = name
+        target.price = price
+
+        // Object.assign
+        // Object.assign(target, { name: form.value.name, price: form.value.price })
     } else {
         // 新增
         products.value.push({
