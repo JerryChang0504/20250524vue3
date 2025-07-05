@@ -14,6 +14,10 @@ import VbindStyle from './components/VbindStyle.vue';
 import VbindClass from './components/VbindClass.vue';
 import VifDemo from './components/VifDemo.vue'
 import ConditionalRendering from './components/ConditionalRendering.vue'
+import VifVshowDiff from './components/VifVshowDiff.vue'
+import ItemObjectVfor from './components/ItemObjectVfor.vue'
+
+import ProductList from './components/ProductList.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -29,7 +33,10 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <ConditionalRendering />
+    <ProductList />
+    <!-- <ItemObjectVfor /> -->
+    <!-- <VifVshowDiff /> -->
+    <!-- <ConditionalRendering /> -->
     <!-- <VifDemo /> -->
     <!-- <VbindClass /> -->
     <!-- <TermsAgreement /> -->
