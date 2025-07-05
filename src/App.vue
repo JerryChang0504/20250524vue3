@@ -19,6 +19,7 @@ import ItemObjectVfor from './components/ItemObjectVfor.vue'
 import ArrayChangeDetection from './components/ArrayChangeDetection.vue'
 import ProductList from './components/ProductList.vue'
 import VonClick from './components/VonClick.vue'
+import VonPrevent from './components/VonPrevent.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -34,6 +35,7 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
+    <!-- <VonPrevent /> -->
     <VonClick />
     <!-- <ArrayChangeDetection /> -->
     <!-- <ProductList /> -->
