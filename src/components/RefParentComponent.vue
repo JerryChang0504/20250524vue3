@@ -1,14 +1,14 @@
     <template>
         <div>
             <h1>父組件</h1>
-            <RefChildComponent ref="child" />
+            <ChildComponent ref="child" />
             <button @click="callChildMethod">呼叫子組件方法</button>
         </div>
     </template>
 
 <script setup name="ParentComponent">
 import { ref } from 'vue'
-import RefChildComponent from './RefChildComponent.vue'
+import ChildComponent from './ChildComponent.vue'
 
 const child = ref()
 
