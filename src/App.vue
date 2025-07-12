@@ -25,6 +25,7 @@ import VmodelSample from './components/VmodelSample.vue'
 import ProductManager from './components/ProductManager.vue'
 import OnMounted from './components/OnMounted.vue'
 import OnUnmounted from './components/OnUnmounted.vue'
+import onUpdated from './components/onUpdated.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -40,7 +41,8 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <OnUnmounted />
+    <onUpdated />
+    <!-- <OnUnmounted /> -->
     <!-- <OnMounted /> -->
     <!-- <ProductManager /> -->
     <!-- <VmodelSample /> -->
