@@ -27,7 +27,7 @@ import OnMounted from './components/OnMounted.vue'
 import OnUnmounted from './components/OnUnmounted.vue'
 import onUpdated from './components/onUpdated.vue'
 import RefComponent from './components/RefComponent.vue'
-import RefParentComponent from './components/refParentComponent.vue'
+import ParentComponent from './components/ParentComponent.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -43,7 +43,7 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <RefParentComponent />
+    <ParentComponent />
     <!-- <RefComponent /> -->
     <!-- <onUpdated /> -->
     <!-- <OnUnmounted /> -->
