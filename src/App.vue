@@ -33,6 +33,7 @@ import TabComponent from './components/TabComponent.vue'
 import RegisterRunDown from './components/Register/RegisterRunDown.vue'
 import WatchRef from './components/WatchRef.vue'
 import WatchDeep from './components/WatchDeep.vue'
+import WatchEffectComp from './components/WatchEffectComp.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -48,8 +49,9 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
+    <WatchEffectComp />
     <!-- <WatchRef /> -->
-    <WatchDeep />
+    <!-- <WatchDeep /> -->
     <!-- <RegisterRunDown /> -->
     <!-- <TabComponent /> -->
     <!-- <toDoList /> -->
