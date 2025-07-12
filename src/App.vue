@@ -28,6 +28,7 @@ import OnUnmounted from './components/OnUnmounted.vue'
 import onUpdated from './components/onUpdated.vue'
 import RefComponent from './components/RefComponent.vue'
 import ParentComponent from './components/ParentComponent.vue'
+import toDoList from './components/toDoList.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -38,12 +39,13 @@ const userDate = { name: 'Mary', age: 18 }
 
     <div class="wrapper">
       <!-- <HelloSetup :msg="'setup'" /> -->
-      <!-- <HelloWorld :msg="'You did it !'" :greetingMessage="'你好'" :userForm="userDate" /> -->
+      <HelloWorld :msg="'You did it !'" :greetingMessage="'你好'" :userForm="userDate" />
     </div>
   </header>
 
   <main>
-    <ParentComponent />
+    <toDoList />
+    <!-- <ParentComponent /> -->
     <!-- <RefComponent /> -->
     <!-- <onUpdated /> -->
     <!-- <OnUnmounted /> -->
