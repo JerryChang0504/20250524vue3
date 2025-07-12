@@ -34,8 +34,24 @@ import RegisterRunDown from './components/Register/RegisterRunDown.vue'
 import WatchRef from './components/WatchRef.vue'
 import WatchDeep from './components/WatchDeep.vue'
 import WatchEffectComp from './components/WatchEffectComp.vue'
-const userDate = { name: 'Mary', age: 18 }
 
+import { ref } from 'vue'
+
+const userDate = { name: 'Mary', age: 18 }
+const show = ref(false)
+
+const btns = [{ text: '取消', color: 'secondary', onClick: () => onCancel() }, { text: '確認刪除', color: 'danger', onClick: () => onDelete() },]
+
+function open() {
+  show.value = true
+}
+
+function onCancel() {
+  console.log('使用者取消了')
+}
+function onDelete() {
+  console.log('刪除成功')
+}
 </script>
 
 <template>
@@ -49,6 +65,12 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
+
+    <button @click="open">開啟AlertBox</button>
+    <AlertBox v-model:visible="show" :title="'刪除確認'" :message="'確定要刪除這筆資料嗎？'" :buttons="btns" :size="'large'"
+      :autoClose="true" :duration="1000" />
+
+
     <WatchEffectComp />
     <!-- <WatchRef /> -->
     <!-- <WatchDeep /> -->
