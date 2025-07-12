@@ -31,6 +31,8 @@ import ParentComponent from './components/ParentComponent.vue'
 import toDoList from './components/toDoList.vue'
 import TabComponent from './components/TabComponent.vue'
 import RegisterRunDown from './components/Register/RegisterRunDown.vue'
+import WatchRef from './components/WatchRef.vue'
+import WatchDeep from './components/WatchDeep.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -46,7 +48,9 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <RegisterRunDown />
+    <!-- <WatchRef /> -->
+    <WatchDeep />
+    <!-- <RegisterRunDown /> -->
     <!-- <TabComponent /> -->
     <!-- <toDoList /> -->
     <!-- <ParentComponent /> -->
