@@ -4,22 +4,24 @@
         <button @click="add">新增商品</button>
         <button @click="remove">刪除商品</button>
         <table>
-            <tr>
-                <th>序號</th>
-                <th>商品</th>
-                <th>價格</th>
-                <th>數量</th>
-                <th>computed 庫存不足</th>
-                <th>Method 庫存不足</th>
-            </tr>
-            <tr v-for="(product, index) in products" :key="product.id">
-                <td>{{ index }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.price }}</td>
-                <td>{{ product.quantity }}</td>
-                <td>{{ InventoryByComputed[product.id] }}</td>
-                <td>{{ InventoryByMethod(product.quantity) }}</td>
-            </tr>
+            <tbody>
+                <tr>
+                    <th>序號</th>
+                    <th>商品</th>
+                    <th>價格</th>
+                    <th>數量</th>
+                    <th>computed 庫存不足</th>
+                    <th>Method 庫存不足</th>
+                </tr>
+                <tr v-for="(product, index) in products" :key="product.id">
+                    <td>{{ index }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ InventoryByComputed[product.id] }}</td>
+                    <td>{{ InventoryByMethod(product.quantity) }}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </template>
