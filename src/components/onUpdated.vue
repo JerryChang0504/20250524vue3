@@ -3,7 +3,7 @@
         <h2>💬 模擬聊天室</h2>
 
         <div class="chat-box" ref="chatBox">
-            <div v-for="(msg, index) in messages" :key="index" :class="['msg', msg.from === 'user' ? 'user' : 'bot']">
+            <div v-for="(msg, index) in messages" :key="index" :class="['msg', msg.form === 'user' ? 'user' : 'bot']">
                 <p class="text">{{ msg.text }}</p>
                 <small class="timestamp">{{ msg.time }}</small>
             </div>
@@ -21,7 +21,7 @@
 import { ref, onUpdated } from 'vue'
 const getNow = () => new Date().toLocaleTimeString()
 
-const messages = ref([{ text: '您好！請問有什麼可以幫忙的嗎？', from: 'bot', time: getNow() }])
+const messages = ref([{ text: '您好！請問有什麼可以幫忙的嗎？', form: 'bot', time: getNow() }])
 const inputText = ref('')
 const chatBox = ref(null)
 
@@ -89,7 +89,7 @@ h2 {
 }
 
 .msg.user {
-    background-color: #74f313;
+    background-color: #dcf8c6;
     align-self: flex-end;
     margin-left: auto;
 }
