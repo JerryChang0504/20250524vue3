@@ -30,6 +30,7 @@ import RefComponent from './components/RefComponent.vue'
 import ParentComponent from './components/ParentComponent.vue'
 import toDoList from './components/toDoList.vue'
 import TabComponent from './components/TabComponent.vue'
+import RegisterRunDown from './components/Register/RegisterRunDown.vue'
 const userDate = { name: 'Mary', age: 18 }
 
 </script>
@@ -45,7 +46,8 @@ const userDate = { name: 'Mary', age: 18 }
   </header>
 
   <main>
-    <TabComponent />
+    <RegisterRunDown />
+    <!-- <TabComponent /> -->
     <!-- <toDoList /> -->
     <!-- <ParentComponent /> -->
     <!-- <RefComponent /> -->
