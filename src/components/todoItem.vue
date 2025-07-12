@@ -7,7 +7,7 @@
 
 <script setup>
 const props = defineProps(['text', 'index'])
-const emit = defineEmits('removeItem')
+const emit = defineEmits(['removeItem'])
 const remove = () => {
     emit('removeItem', props.index)
 }
