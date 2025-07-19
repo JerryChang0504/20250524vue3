@@ -1,6 +1,8 @@
 <template>
     <h2> Test components</h2>
     <p>{{ parm }}</p>
+
+    <button @click="click">點我測試</button>
 </template>
 
 <script setup>
@@ -27,7 +29,14 @@ const props = defineProps({
     validvalue: {
         type: Array,
         default: ['success', 'warning', 'danger'],
+    },
+    click: {
+        type: Function,
+        default: () => () => {
+            console.log('Default function')
+        }
     }
+
 })
 
 const parm = props

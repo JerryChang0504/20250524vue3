@@ -35,7 +35,7 @@ import WatchRef from './components/WatchRef.vue'
 import WatchDeep from './components/WatchDeep.vue'
 import WatchEffectComp from './components/WatchEffectComp.vue'
 import TestCmp from './components/TestCmp.vue';
-
+import VmodelChild from './components/VmodelChild.vue';
 import { ref } from 'vue'
 
 const userDate = { name: 'Mary', age: 18 }
@@ -52,6 +52,8 @@ function onCancel() {
 function onDelete() {
   console.log('刪除成功')
 }
+
+const Test = ref('test')
 </script>
 
 <template>
@@ -65,14 +67,11 @@ function onDelete() {
   </header>
 
   <main>
-
-    <button @click="open">開啟AlertBox</button>
-    <AlertBox v-model:visible="show" :title="'刪除確認'" :message="'確定要刪除這筆資料嗎？'"
+    <VmodelChild v-model:title="Test" /> <!-- <button @click="open">開啟AlertBox</button> -->
+    <!-- <AlertBox v-model:visible="show" :title="'刪除確認'" :message="'確定要刪除這筆資料嗎？'"
       :buttons="[{ text: '取消', color: 'secondary', onClick: () => onCancel() }, { text: '確認刪除', color: 'danger', onClick: () => onDelete() }]"
-      :size="'large'" autoClose />
-
-    <TestCmp :obj="{ name: 'Jerry' }" :msg="'success'" :validvalue="['Hello']" />
-
+      :size="'large'" autoClose /> -->
+    <!-- <TestCmp :obj="{ name: 'Jerry' }" :msg="'success'" :validvalue="['Hello']" /> -->
     <!-- <WatchEffectComp /> -->
     <!-- <WatchRef /> -->
     <!-- <WatchDeep /> -->
