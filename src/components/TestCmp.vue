@@ -9,11 +9,24 @@ import { ref } from 'vue'
 const props = defineProps({
     obj: {
         type: Object,
-        required: true
+        required: true,
+        default() {
+            return { message: 'hello' }
+        }
+    },
+    nbr: {
+        type: Number
+    },
+    msg: {
+        type: String,
+        validator(value, props) {
+            return ['success', 'warning', 'danger'].includes(value)
+        }
     }
 })
 
-const parm = props.obj
+const parm = props
+console.log("🚀 ~ parm:", parm)
 
 
 </script>

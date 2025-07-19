@@ -71,7 +71,7 @@ function onDelete() {
       :buttons="[{ text: '取消', color: 'secondary', onClick: () => onCancel() }, { text: '確認刪除', color: 'danger', onClick: () => onDelete() }]"
       :size="'large'" autoClose />
 
-    <TestCmp />
+    <TestCmp :obj="{ name: 'Jerry' }" :msg="'success'" />
 
     <!-- <WatchEffectComp /> -->
     <!-- <WatchRef /> -->
