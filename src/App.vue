@@ -40,6 +40,7 @@ import ProductPage from './components/ProductPage.vue'
 import FancyButton from './components/FancyButton.vue';
 import BaseLayout from './components/BaseLayout.vue'
 import TabBar from './components/TabBar.vue';
+import UserData from './components/UserData.vue'
 import { ref } from 'vue'
 
 const userDate = { name: 'Mary', age: 18 }
@@ -77,7 +78,9 @@ const message = ref({
   </header>
 
   <main>
-    <TabBar />
+    <UserData />
+    <!-- <TabBar /> -->
+    <!-- <TabComponent /> -->
     <!-- <BaseLayout>
       <template #header>
         <h1>Here might be a page title</h1>
@@ -115,7 +118,6 @@ const message = ref({
     <!-- <WatchRef /> -->
     <!-- <WatchDeep /> -->
     <!-- <RegisterRunDown /> -->
-    <!-- <TabComponent /> -->
     <!-- <toDoList /> -->
     <!-- <ParentComponent /> -->
     <!-- <RefComponent /> -->
