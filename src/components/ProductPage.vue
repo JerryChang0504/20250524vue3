@@ -1,6 +1,29 @@
 <template>
 
-    <ProductFilter :categories="categoryOptions" />
+    <ProductFilter v-model:category="productFilterData.category" v-model:maxPrice="productFilterData.maxPrice"
+        :categories="categoryOptions" @reset="resetFilter" />
+
+    <h3>📦 商品清單</h3>
+    <div class="table-wrapper">
+        <table v-if="filteredProducts.length > 0">
+            <thead>
+                <tr>
+                    <th>名稱</th>
+                    <th>分類</th>
+                    <th>價格</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in filteredProducts" :key="item.id">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.category }}</td>
+                    <td>{{ item.price }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p v-else class="no-data">❌ 找不到符合的商品</p>
+    </div>
 </template>
 
 <script setup>
@@ -32,6 +55,62 @@ const categoryOptions = computed(() => {
     const set = new Set(products.map((p) => p.category))
     return ['全部', ...set]
 })
+
+// 根據篩選條件過濾商品
+const filteredProducts = computed(() => {
+    return products.filter((item) => {
+        // 1. 判斷分類是否符合
+        // 如果篩選分類是「全部」，代表不限制分類，全部都符合
+        // 否則只要商品分類等於篩選分類才符合
+        const matchCategory =
+            productFilterData.category === '全部' || item.category === productFilterData.category
+        // 2. 判斷價格是否符合
+        // 商品價格必須小於等於篩選價格上限
+        const matchPrice = item.price <= productFilterData.maxPrice
+        // 3. 只有兩者都符合才保留該商品
+        return matchCategory && matchPrice
+    })
+})
+
+const productFilterData = reactive({
+    category: '全部',
+    maxPrice: 30000,
+})
+
+const resetFilter = () => {
+    productFilterData.category = '全部'
+    productFilterData.maxPrice = 30000
+}
 </script>
 
-<style scoped></style>
+<style scoped>
+container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.table-wrapper {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.no-data {
+    padding: 16px;
+    text-align: center;
+    color: #888;
+}
+</style>

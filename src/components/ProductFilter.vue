@@ -19,14 +19,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
+const localCategory = defineModel('category')
+const localMaxPrice = defineModel('maxPrice')
 const props = defineProps({
-    category: String,
     categories: Array
 })
 
-const localCategory = ref(props.category)
+const emits = defineEmits(['reset'])
+
+const reset = () => { emits('reset') }
+
 
 </script>
 
