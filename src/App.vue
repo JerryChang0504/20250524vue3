@@ -53,7 +53,10 @@ function onDelete() {
   console.log('刪除成功')
 }
 
-const Test = ref('test')
+const message = ref({
+  firstname: '',
+  lastname: ''
+})
 </script>
 
 <template>
@@ -67,7 +70,10 @@ const Test = ref('test')
   </header>
 
   <main>
-    <VmodelChild v-model:title="Test" /> <!-- <button @click="open">開啟AlertBox</button> -->
+    <VmodelChild v-model:firstname="message.firstname" v-model:lastname="message.lastname" />
+    <h2>firstname:{{ message.firstname }}</h2>
+    <h2>lastname:{{ message.lastname }}</h2>
+    <!-- <button @click="open">開啟AlertBox</button> -->
     <!-- <AlertBox v-model:visible="show" :title="'刪除確認'" :message="'確定要刪除這筆資料嗎？'"
       :buttons="[{ text: '取消', color: 'secondary', onClick: () => onCancel() }, { text: '確認刪除', color: 'danger', onClick: () => onDelete() }]"
       :size="'large'" autoClose /> -->
