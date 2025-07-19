@@ -47,7 +47,10 @@ const props = defineProps({
         type: String,
         default: 'medium',
     },
-    autoClose: Boolean,
+    autoClose: {
+        type: Boolean,
+        default: false
+    },
     duration: {
         type: Number,
         default: 3000,

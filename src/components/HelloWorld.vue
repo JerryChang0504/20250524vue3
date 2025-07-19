@@ -1,6 +1,9 @@
 <script setup>
 defineProps({
-  msg: String,
+  msg: {
+    type: String,
+    required: true
+  },
   greetingMessage: String,
   userForm: Object,
 })
