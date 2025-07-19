@@ -41,7 +41,7 @@ import FancyButton from './components/FancyButton.vue';
 import BaseLayout from './components/BaseLayout.vue'
 import TabBar from './components/TabBar.vue';
 import UserData from './components/UserData.vue'
-import ProvideInjectRef from './components/Provide/ProvideInjectRef.vue'
+import ProvideInjectRef from './components/ProvideView/ProvideInjectRef.vue'
 import { ref } from 'vue'
 
 const userDate = { name: 'Mary', age: 18 }

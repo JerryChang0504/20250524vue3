@@ -8,17 +8,15 @@
 </template>
 
 <script setup>
-import { ref, provide, reactive } from 'vue'
+import { provide, } from 'vue'
 import ThemeToggler from './ThemeToggler.vue'
 import LanguageSwitcher from './LanguageSwitcher.vue'
 import ContextUser from './ContextUser.vue'
+import { createAppContext } from '@/provide/context'
+import { AppContextKey } from '@/provide/context-key'
 
-const context = reactive({
-    theme: 'light',
-    locale: 'zh',
-})
-
-provide('context', context)
+const context = createAppContext() //帶入 reactive 狀態
+provide(AppContextKey, context)    //使用symbol key 將 context往下傳
 </script>
 
 <style scoped>
