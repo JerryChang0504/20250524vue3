@@ -81,6 +81,7 @@ const resetFilter = () => {
     productFilterData.category = '全部'
     productFilterData.maxPrice = 30000
 }
+
 </script>
 
 <style scoped>

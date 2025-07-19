@@ -38,6 +38,7 @@ import TestCmp from './components/TestCmp.vue';
 import VmodelChild from './components/VmodelChild.vue';
 import ProductPage from './components/ProductPage.vue'
 import FancyButton from './components/FancyButton.vue';
+import BaseLayout from './components/BaseLayout.vue'
 import { ref } from 'vue'
 
 const userDate = { name: 'Mary', age: 18 }
@@ -75,12 +76,27 @@ const message = ref({
   </header>
 
   <main>
+    <BaseLayout>
+      <template #header>
+        <h1>Here might be a page title</h1>
+      </template>
+
+      <template #default> <!-- 可以省略不寫，也是會被設定為默認插槽內容 -->
+        <p>A paragraph for the main content.</p>
+        <p>And another one.</p>
+      </template>
+
+      <template #footer>
+        <p>Here's some contact info</p>
+      </template>
+    </BaseLayout>
+
 
     <!-- <FancyButton>
     </FancyButton> -->
 
 
-    <ProductPage />
+    <!-- <ProductPage /> -->
     <!-- <VmodelChild v-model:firstname="message.firstname" v-model:lastname="message.lastname"
       v-model:lazyInput="message.lazyInput" v-model:numberInput="message.numberInput"
       v-model:inputTrim="message.inputTrim" />
