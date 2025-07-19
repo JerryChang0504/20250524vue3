@@ -36,6 +36,7 @@ import WatchDeep from './components/WatchDeep.vue'
 import WatchEffectComp from './components/WatchEffectComp.vue'
 import TestCmp from './components/TestCmp.vue';
 import VmodelChild from './components/VmodelChild.vue';
+import ProductPage from './components/ProductPage.vue'
 import FancyButton from './components/FancyButton.vue';
 import { ref } from 'vue'
 
@@ -75,8 +76,11 @@ const message = ref({
 
   <main>
 
-    <FancyButton>
-    </FancyButton>
+    <!-- <FancyButton>
+    </FancyButton> -->
+
+
+    <ProductPage />
     <!-- <VmodelChild v-model:firstname="message.firstname" v-model:lastname="message.lastname"
       v-model:lazyInput="message.lazyInput" v-model:numberInput="message.numberInput"
       v-model:inputTrim="message.inputTrim" />
