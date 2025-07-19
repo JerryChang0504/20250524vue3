@@ -36,6 +36,7 @@ import WatchDeep from './components/WatchDeep.vue'
 import WatchEffectComp from './components/WatchEffectComp.vue'
 import TestCmp from './components/TestCmp.vue';
 import VmodelChild from './components/VmodelChild.vue';
+import FancyButton from './components/FancyButton.vue';
 import { ref } from 'vue'
 
 const userDate = { name: 'Mary', age: 18 }
@@ -73,14 +74,17 @@ const message = ref({
   </header>
 
   <main>
-    <VmodelChild v-model:firstname="message.firstname" v-model:lastname="message.lastname"
+
+    <FancyButton>
+    </FancyButton>
+    <!-- <VmodelChild v-model:firstname="message.firstname" v-model:lastname="message.lastname"
       v-model:lazyInput="message.lazyInput" v-model:numberInput="message.numberInput"
       v-model:inputTrim="message.inputTrim" />
     <h2>firstname : {{ message.firstname }}</h2>
     <h2>lastname : {{ message.lastname }}</h2>
     <h2>lazyInput : {{ message.lazyInput }}</h2>
     <h2>numberInput : {{ typeof message.numberInput }}</h2>
-    <h2>inputTrim : {{ message.inputTrim.length }}</h2>
+    <h2>inputTrim : {{ message.inputTrim.length }}</h2> -->
 
     <!-- <button @click="open">開啟AlertBox</button> -->
     <!-- <AlertBox v-model:visible="show" :title="'刪除確認'" :message="'確定要刪除這筆資料嗎？'"
