@@ -55,7 +55,10 @@ function onDelete() {
 
 const message = ref({
   firstname: '',
-  lastname: ''
+  lastname: '',
+  lazyInput: '',
+  numberInput: 0,
+  inputTrim: ''
 })
 </script>
 
@@ -70,9 +73,15 @@ const message = ref({
   </header>
 
   <main>
-    <VmodelChild v-model:firstname="message.firstname" v-model:lastname="message.lastname" />
-    <h2>firstname:{{ message.firstname }}</h2>
-    <h2>lastname:{{ message.lastname }}</h2>
+    <VmodelChild v-model:firstname="message.firstname" v-model:lastname="message.lastname"
+      v-model:lazyInput="message.lazyInput" v-model:numberInput="message.numberInput"
+      v-model:inputTrim="message.inputTrim" />
+    <h2>firstname : {{ message.firstname }}</h2>
+    <h2>lastname : {{ message.lastname }}</h2>
+    <h2>lazyInput : {{ message.lazyInput }}</h2>
+    <h2>numberInput : {{ typeof message.numberInput }}</h2>
+    <h2>inputTrim : {{ message.inputTrim.length }}</h2>
+
     <!-- <button @click="open">開啟AlertBox</button> -->
     <!-- <AlertBox v-model:visible="show" :title="'刪除確認'" :message="'確定要刪除這筆資料嗎？'"
       :buttons="[{ text: '取消', color: 'secondary', onClick: () => onCancel() }, { text: '確認刪除', color: 'danger', onClick: () => onDelete() }]"
