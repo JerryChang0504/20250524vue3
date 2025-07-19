@@ -17,7 +17,7 @@
                 <tr v-for="item in filteredProducts" :key="item.id">
                     <td>{{ item.name }}</td>
                     <td>{{ item.category }}</td>
-                    <td>{{ item.price }}</td>
+                    <td>{{ $formatPrice(item.price, 0) }}</td>
                 </tr>
             </tbody>
         </table>

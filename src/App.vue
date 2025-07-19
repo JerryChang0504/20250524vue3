@@ -79,7 +79,11 @@ const message = ref({
   </header>
 
   <main>
-    <ProvideInjectRef />
+
+    <p>{{ $formatPrice(1000) }}</p>
+    <p>{{ $formatDate(new Date(), 'full') }}</p>
+
+    <!-- <ProvideInjectRef /> -->
     <!-- <UserData /> -->
     <!-- <TabBar /> -->
     <!-- <TabComponent /> -->
@@ -101,7 +105,7 @@ const message = ref({
     </FancyButton> -->
 
 
-    <!-- <ProductPage /> -->
+    <ProductPage />
     <!-- <VmodelChild v-model:firstname="message.firstname" v-model:lastname="message.lastname"
       v-model:lazyInput="message.lazyInput" v-model:numberInput="message.numberInput"
       v-model:inputTrim="message.inputTrim" />
