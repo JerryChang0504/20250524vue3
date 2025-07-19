@@ -11,6 +11,7 @@ const props = defineProps({
         type: Object,
         required: true,
         default() {
+
             return { message: 'hello' }
         }
     },
@@ -20,13 +21,16 @@ const props = defineProps({
     msg: {
         type: String,
         validator(value, props) {
-            return ['success', 'warning', 'danger'].includes(value)
+            return props.validvalue.includes(value)
         }
+    },
+    validvalue: {
+        type: Array,
+        default: ['success', 'warning', 'danger'],
     }
 })
 
 const parm = props
-console.log("🚀 ~ parm:", parm)
 
 
 </script>
