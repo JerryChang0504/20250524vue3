@@ -16,7 +16,12 @@ const routes = [
     component: Users,
     children: [
       { path: 'list', name: 'UserList', component: UserList },
-      { path: 'profile', name: 'UserProfile', component: UserProfile }
+      {
+        path: ':id',
+        name: 'UserProfile',
+        component: UserProfile,
+        props: true // ✅ 啟用 props 傳遞 id 給 UserProfile.vue
+      }
     ]
   }
 ]

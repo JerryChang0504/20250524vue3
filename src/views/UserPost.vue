@@ -6,7 +6,9 @@
 </template>
 <script setup>
 import { useRoute } from 'vue-router'
+import { computed } from 'vue'
 
 const route = useRoute()
-const { username, postId } = route.params
+const username = computed(() => route.params.username)
+const postId = computed(() => route.params.postId)
 </script>
