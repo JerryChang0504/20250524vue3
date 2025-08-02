@@ -27,13 +27,15 @@
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue'
-
+import { reactive, computed, getCurrentInstance } from 'vue'
+const { appContext } = getCurrentInstance()
 import ProductFilter from './ProductFilter.vue'
 
+const $formatPrice = appContext.config.globalProperties.$formatPrice
+console.log($formatPrice(1000))
 
 const products = reactive([
-    { id: 1, name: '無線滑鼠', category: '配件', price: 800 },
+    { id: 1, name: '無線滑鼠', category: '配件', price: 8000 },
     { id: 2, name: '筆記型電腦', category: '筆電', price: 24000 },
     { id: 3, name: '藍牙耳機', category: '配件', price: 1500 },
     { id: 4, name: '智慧手機', category: '手機', price: 20000 },
