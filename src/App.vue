@@ -43,6 +43,7 @@ import TabBar from './components/TabBar.vue';
 import UserData from './components/UserData.vue'
 import ProvideInjectRef from './components/ProvideView/ProvideInjectRef.vue'
 import { ref } from 'vue'
+import TopNavbar from './views/TopNavbar.vue';
 
 const userDate = { name: 'Mary', age: 18 }
 const show = ref(false)
@@ -79,15 +80,10 @@ const message = ref({
   </header>
 
   <main>
+    <h1>我的網站</h1>
 
+    <TopNavbar />
     <div>
-      <h1>我的網站</h1>
-      <nav>
-        <router-link to="/">首頁</router-link> |
-        <router-link to="/about">關於</router-link>|
-        <router-link to="/users/eduardo/posts/1">/users/eduardo/posts/1</router-link>|
-        <router-link to="/users/eduardo/posts/20">/users/eduardo/posts/20</router-link>
-      </nav>
       <router-view />
     </div>
 
