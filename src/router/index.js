@@ -6,10 +6,11 @@ import UserPost from '@/views/UserPost.vue'
 import Users from '@/views/Users.vue'
 import UserList from '@/views/UserList.vue'
 import UserProfile from '@/views/UserProfile.vue'
-
+import Login from '@/views/Login.vue'
 
 const routes = [
-  { path: '/', component: Home },
+  { path: '/', name:'Home', component: Home },
+  { path: '/login', name: 'Login', component: Login },
   { path: '/about', component: About },
   { path: '/users/:username/posts/:postId', component: UserPost },{
     path: '/users', name:'Users',
