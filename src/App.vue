@@ -44,6 +44,7 @@ import UserData from './components/UserData.vue'
 import ProvideInjectRef from './components/ProvideView/ProvideInjectRef.vue'
 import { ref } from 'vue'
 import TopNavbar from './views/TopNavbar.vue';
+import CountStore from './components/CountStore.vue';
 
 const userDate = { name: 'Mary', age: 18 }
 const show = ref(false)
@@ -80,12 +81,13 @@ const message = ref({
   </header>
 
   <main>
-    <h1>我的網站</h1>
+    <CountStore />
+    <!-- <h1>我的網站</h1>
 
     <TopNavbar />
     <div>
       <router-view />
-    </div>
+    </div> -->
 
     <!-- <p>{{ $formatPrice(1000) }}</p>
     <p>{{ $formatDate(new Date(), 'full') }}</p> -->
