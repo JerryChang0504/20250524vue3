@@ -80,8 +80,17 @@ const message = ref({
 
   <main>
 
-    <p>{{ $formatPrice(1000) }}</p>
-    <p>{{ $formatDate(new Date(), 'full') }}</p>
+    <div>
+      <h1>我的網站</h1>
+      <nav>
+        <router-link to="/">首頁</router-link> |
+        <router-link to="/about">關於</router-link>
+      </nav>
+      <router-view />
+    </div>
+
+    <!-- <p>{{ $formatPrice(1000) }}</p>
+    <p>{{ $formatDate(new Date(), 'full') }}</p> -->
 
     <!-- <ProvideInjectRef /> -->
     <!-- <UserData /> -->
@@ -105,7 +114,7 @@ const message = ref({
     </FancyButton> -->
 
 
-    <ProductPage />
+    <!-- <ProductPage /> -->
     <!-- <VmodelChild v-model:firstname="message.firstname" v-model:lastname="message.lastname"
       v-model:lazyInput="message.lazyInput" v-model:numberInput="message.numberInput"
       v-model:inputTrim="message.inputTrim" />
