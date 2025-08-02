@@ -27,11 +27,10 @@
 </template>
 
 <script setup>
-import { reactive, computed, getCurrentInstance } from 'vue'
-const { appContext } = getCurrentInstance()
+import { reactive, computed } from 'vue'
 import ProductFilter from './ProductFilter.vue'
-
-const $formatPrice = appContext.config.globalProperties.$formatPrice
+import useFormat from '@/composables/useFormat'
+const { $formatPrice } = useFormat()
 console.log($formatPrice(1000))
 
 const products = reactive([
