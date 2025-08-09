@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { useUserStore } from '@/stores/UserStore'
+import { useUserStore } from '@/stores/serStore'
 import { useRouter } from 'vue-router'
 
 const userStore = useUserStore()

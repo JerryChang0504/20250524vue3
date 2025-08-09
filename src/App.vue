@@ -46,6 +46,14 @@ import { ref } from 'vue'
 import TopNavbar from './views/TopNavbar.vue';
 import TopNavLogin from './views/TopNavLogin.vue'
 import CountStore from './components/CountStore.vue';
+import api from '@/service/api'
+
+document.title = import.meta.env.VITE_APP_TITLE
+
+const productList = ref([])
+api.get('/api/QueryProduct').then(res => {
+  productList.value = res.data
+})
 
 const userDate = { name: 'Mary', age: 18 }
 const show = ref(false)
@@ -82,14 +90,15 @@ const message = ref({
   </header>
 
   <main>
+    <pre>{{ productList }} </pre>
     <!-- <CountStore /> -->
-    <h1>我的網站</h1>
+    <!-- <h1>我的網站</h1> -->
 
     <!-- <TopNavbar /> -->
-    <TopNavLogin />
-    <div>
+    <!-- <TopNavLogin /> -->
+    <!-- <div>
       <router-view />
-    </div>
+    </div> -->
 
     <!-- <p>{{ $formatPrice(1000) }}</p>
     <p>{{ $formatDate(new Date(), 'full') }}</p> -->
